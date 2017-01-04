@@ -6,7 +6,7 @@ import {Component} from 'angular2/core'
     <h2>Courses</h2>
     {{title}}
     <ul>
-      <li *ngFor="#course of courses"> 
+      <li *ngFor="#course of courses">
         {{course}}
       </li>
     </ul>
