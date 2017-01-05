@@ -19,11 +19,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             AutoGrowDirective = (function () {
-                function AutoGrowDirective() {
+                function AutoGrowDirective(el, renderer) {
+                    this.el = el;
+                    this.renderer = renderer;
                 }
                 AutoGrowDirective.prototype.onFocus = function () {
+                    this.renderer.setElementStyle(this.el, 'width', '200');
                 };
                 AutoGrowDirective.prototype.onblur = function () {
+                    this.renderer.setElementStyle(this.el, 'width', '120');
                 };
                 AutoGrowDirective = __decorate([
                     core_1.Directive({
@@ -35,7 +39,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             '(blur)': 'onBlur()'
                         }
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], AutoGrowDirective);
                 return AutoGrowDirective;
             }());
