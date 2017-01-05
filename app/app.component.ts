@@ -4,7 +4,12 @@ import {AuthorsComponent} from './authors.component'
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1><courses></courses><authors><authors>',
+    template: `
+      <h1>My First Angular 2 App</h1>
+      <courses></courses>
+      <authors></authors>`,
     directives: [CoursesComponent, AuthorsComponent] // ref
 })
-export class AppComponent { } // this is the root application
+
+// this is the root application
+export class AppComponent { }
